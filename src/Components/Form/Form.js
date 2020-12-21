@@ -32,10 +32,9 @@ const getTotalPrice = () =>{
           console.log(data.routes[0].distance)
           setDistance(data.routes[0].distance)
       })
-      .then(getTotalPrice())
       .catch(err=>{
         console.log(err,'error')
-        alert('Found a problem fetching data')
+        alert('Found a problem fetching data or invalid values')
       })
      
     }
@@ -107,7 +106,9 @@ console.log(price)
           placeholder="Longitude second location.."
         />
       </FormGroup>
-      </div>
+    </div>
+    <Button onClick={postFormValue}>Get distance</Button>
+
       <div className='prices'>
       <FormGroup>
         <Label for="exampleNumber">Price($/km)</Label>
@@ -129,7 +130,7 @@ console.log(price)
         </Input>
       </FormGroup>
       </div>
-      <Button onClick={postFormValue}>Submit</Button>
+      <Button onClick={getTotalPrice}>Calculate</Button>
       <h4>Total price:{total}€</h4>
       <h4>Distance: {distance* 0.001} km</h4>
 
