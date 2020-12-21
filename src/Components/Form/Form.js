@@ -20,14 +20,16 @@ const getTotalPrice = () =>{
     setPrice('')
 }
     //get the ditsnace from the object respone using OSRM(long lat) like params
+    //example Barcelona-Rome (2.154007,41.390205/12.496366,41.902782)
 useEffect(() => {
+    // fetch(`http://router.project-osrm.org/route/v1/driving/${long1},${lat1};${long2},${lat2}`)
     fetch('http://router.project-osrm.org/route/v1/driving/2.154007,41.390205;12.496366,41.902782')
+
       .then(res => res.json())
       .then(data =>{
           console.log(data)
           console.log(data.routes[0].distance)
           setDistance(data.routes[0].distance)
-
       })
       .catch(err=>{
         console.log(err,'error')
@@ -35,6 +37,7 @@ useEffect(() => {
       })
   },[])
 console.log(total)
+console.log(price)
   return (
     <Form>
     
@@ -50,8 +53,9 @@ console.log(total)
         />
       </FormGroup>
       <h4>Coordinates</h4>
+      <div className='first-location'>
       <FormGroup>
-        <Label for="exampleNumber">Lat</Label>
+        <Label for="exampleNumber">Latitude</Label>
         <Input
           value={lat1}
           onChange={e => setLat1(e.target.value)}
@@ -72,7 +76,9 @@ console.log(total)
           placeholder="Longitude first location"
         />
       </FormGroup>
+      </div>
       {/* point B */}
+      <div className='second-location'>
       <FormGroup>
         <Label for="exampleNumber">Latitude</Label>
         <Input
@@ -95,7 +101,8 @@ console.log(total)
           placeholder="Longitude second location.."
         />
       </FormGroup>
-      
+      </div>
+      <div className='prices'>
       <FormGroup>
         <Label for="exampleNumber">Price($/km)</Label>
         <Input
@@ -107,9 +114,18 @@ console.log(total)
           placeholder="Price $/km"
         />
       </FormGroup>
+      <FormGroup>
+        <Label for="exampleSelect">Select</Label>
+        <Input type="select" name="select" id="exampleSelect">
+          <option>Choose a price..</option>
+          <option>Truck → 0.50€/Km</option>
+          <option>Van → 0.25€/Km</option>
+        </Input>
+      </FormGroup>
+      </div>
       <Button onClick={getTotalPrice}>Submit</Button>
       <h4>Total price:{total}$</h4>
-      <h4>distance : {distance}</h4>
+      <h4>distance : {distance} km</h4>
 
     </Form>
   );
