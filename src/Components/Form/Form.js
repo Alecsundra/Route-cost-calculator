@@ -1,5 +1,5 @@
 import React, { 
-    useState, useEffect } from 'react';
+    useState } from 'react';
 import { 
     Form, FormGroup, Label, Input, Button } from 'reactstrap';
 
@@ -21,21 +21,24 @@ const getTotalPrice = () =>{
 }
     //get the ditsnace from the object respone using OSRM(long lat) like params
     //example Barcelona-Rome (2.154007,41.390205/12.496366,41.902782)
-useEffect(() => {
-    // fetch(`http://router.project-osrm.org/route/v1/driving/${long1},${lat1};${long2},${lat2}`)
-    fetch('http://router.project-osrm.org/route/v1/driving/2.154007,41.390205;12.496366,41.902782')
 
+    const postFormValue = e => {
+        e.preventDefault()
+    fetch(`http://router.project-osrm.org/route/v1/driving/${long1},${lat1};${long2},${lat2}`)
+    // fetch('http://router.project-osrm.org/route/v1/driving/2.154007,41.390205;12.496366,41.902782')
       .then(res => res.json())
       .then(data =>{
           console.log(data)
           console.log(data.routes[0].distance)
           setDistance(data.routes[0].distance)
       })
+      .then(getTotalPrice())
       .catch(err=>{
         console.log(err,'error')
         alert('Found a problem fetching data')
       })
-  },[])
+     
+    }
 console.log(total)
 console.log(price)
 
@@ -114,7 +117,7 @@ console.log(price)
           type="number"
           name="price"
           id="price"
-          placeholder="Price $/km"
+          placeholder="Price €/km"
         />
       </FormGroup>
       <FormGroup>
@@ -126,9 +129,9 @@ console.log(price)
         </Input>
       </FormGroup>
       </div>
-      <Button onClick={getTotalPrice}>Submit</Button>
-      <h4>Total price:{total}$</h4>
-      <h4>distance : {distance} km</h4>
+      <Button onClick={postFormValue}>Submit</Button>
+      <h4>Total price:{total}€</h4>
+      <h4>Distance: {distance* 0.001} km</h4>
 
     </Form>
   );
