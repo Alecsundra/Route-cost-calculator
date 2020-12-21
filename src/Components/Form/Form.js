@@ -16,8 +16,8 @@ const FormD = () => {
 const getTotalPrice = () =>{
     setTotal(distance*price)
     //letting the form line clean
-    setDistance('')
-    setPrice('')
+    // setDistance('')
+    // setPrice('')
 }
     //get the ditsnace from the object respone using OSRM(long lat) like params
     //example Barcelona-Rome (2.154007,41.390205/12.496366,41.902782)
@@ -38,9 +38,11 @@ useEffect(() => {
   },[])
 console.log(total)
 console.log(price)
+
+
   return (
     <Form>
-    
+    <div className='distance-form'>
       <FormGroup>
         <Label for="exampleNumber">Distance(km)</Label>
         <Input
@@ -52,6 +54,7 @@ console.log(price)
           placeholder="Distance in km"
         />
       </FormGroup>
+      </div>
       <h4>Coordinates</h4>
       <div className='first-location'>
       <FormGroup>
@@ -116,10 +119,10 @@ console.log(price)
       </FormGroup>
       <FormGroup>
         <Label for="exampleSelect">Select</Label>
-        <Input type="select" name="select" id="exampleSelect">
+        <Input type="select" name="select" id="exampleSelect" onChange={e => setPrice(e.target.value)}>
           <option>Choose a price..</option>
-          <option>Truck → 0.50€/Km</option>
-          <option>Van → 0.25€/Km</option>
+          <option value={0.50}>Truck → 0.50€/Km</option>
+          <option value={0.25}>Van → 0.25€/Km</option>
         </Input>
       </FormGroup>
       </div>
