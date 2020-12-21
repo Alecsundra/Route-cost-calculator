@@ -1,4 +1,37 @@
 .App {
   text-align: center;
-  padding: 8rem;
+  padding: 4rem;
+  background-color: rgb(39, 38, 51);
+}
+.first-location{
+  display: flex;
+  margin-top:2rem;
+  justify-content: space-around;
+}
+.second-location{
+  display: flex;
+  margin-top:2rem;
+  justify-content: space-around;
+
+}
+.distance-form{
+  display: flex;
+  justify-content: space-around;
+}
+.form-group{
+  margin-top:2rem;
+  font-size: 1.5rem;
+}
+.prices {
+  display:flex;
+  margin-top:2rem;
+  justify-content: space-around;
+}
+.Home {
+  background-color: rgb(230, 235, 236);
+  border-radius: 8px;
+
+}
+h4 {
+  margin-top: 2rem;
 }
