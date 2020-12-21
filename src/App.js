@@ -5,7 +5,6 @@ import Home from './Components/Home/Home'
 const App = () => {
   return (
     <div className="App">
-      app
       <Home />
     </div>
   );
