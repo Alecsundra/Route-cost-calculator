@@ -135,7 +135,12 @@ console.log(price)
       <Button onClick={getTotalPrice}>Calculate</Button>
       <h4>Total price:{total}€</h4>
       <h4>Distance: {distance* 0.001} km</h4>
-      <Map />
+      <Map 
+        lat1={lat1}
+        long1={long1}
+        lat2={lat2}
+        long2={long2}
+      />
     </Form>
    
     </>
