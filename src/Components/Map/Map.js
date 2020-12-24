@@ -32,7 +32,6 @@ const Map = ({ lat1,long1,lat2,long2 }) => {
         console.log(directions)
         // console.log(directions.actions.setDestinationFromCoordinates(lat1,long1))
         // console.log(directions.actions.setOriginFromCoordinates)
-
         map.on('load',  function() {
           directions.actions.setOriginFromCoordinates([lat1, long1]); // can be address in form setOrigin("12, Elm Street, NY")
           directions.actions.setDestinationFromCoordinates([lat2, long2]); // can be address
@@ -40,9 +39,8 @@ const Map = ({ lat1,long1,lat2,long2 }) => {
   }, []); 
  
   return (
-    <div className='mapa'>
      <div ref={mapWrapper} className="mapWrapper" />
-    </div>
+
   );
 };
 
