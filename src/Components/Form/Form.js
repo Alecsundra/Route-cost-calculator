@@ -72,6 +72,7 @@ console.log(price)
           </div>
       }
           <h4>Coordinates</h4>
+          <h5>Origin</h5>
           <div className='first-location'>
           <FormGroup>
             <Label for="exampleNumber">Latitude</Label>
@@ -84,7 +85,6 @@ console.log(price)
               placeholder="Latitude first location"
             />
           </FormGroup>
-          <h5>Origin</h5>
           <FormGroup>
             <Label for="exampleNumber">Longitude</Label>
             <Input
