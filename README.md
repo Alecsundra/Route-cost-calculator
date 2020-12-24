@@ -1,3 +1,64 @@
+# Route Cost Calculator App
+The project is a simple  route cost calculator app build with [React App](https://github.com/facebook/create-react-app) 
+
+
+## Table of contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Features](#features)
+* [To DO](#todo)
+## General info
+
+### Structure
+
+* src
+    * App.js
+    * Components
+         * Form
+         * Home
+         * Map
+
+On homepage the user can introduce the distance and the price for km and calculate the cost.
+The user can write the coordinates of the origin and destination, having displayed the map with the route and the distance calculated.
+
+## Technologies
+Project is created with:
+
+    "bootstrap": "^4.5.3",
+    "mapbox-gl": "^2.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1",
+    "reactstrap": "^8.7.1",
+    "web-vitals": "^0.2.4"
+	
+## Setup
+To run this project first install it locally.
+Clone a repository using the command line
+and instructions of [GitHub](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+$ cd ../projectFolder
+$ npm install
+$ npm start
+```
+
+## Features
+* The awesome map displayed with [Mapbox](https://www.npmjs.com/package/mapbox-gl);
+* Route displayed between two points with [Mapbox GL Directions](https://www.npmjs.com/package/@mapbox/mapbox-gl-directions)
+* The route distance between coordinates calculated with [OSRM API](http://project-osrm.org/docs/v5.5.1/api/#general-options);
+
+## To DO
+* Better error handling;
+* Improving user experience using the map;
+* Handle the warnings from the console;
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
