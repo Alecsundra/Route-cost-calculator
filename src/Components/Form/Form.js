@@ -2,6 +2,7 @@ import React, {
     useState } from 'react';
 import { 
     Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import Map from '../Map/Map';
 
 const FormD = () => {
     const [distance, setDistance] = useState('');
@@ -43,6 +44,7 @@ console.log(price)
 
 
   return (
+      <>
     <Form>
     <div className='distance-form'>
       <FormGroup>
@@ -133,8 +135,10 @@ console.log(price)
       <Button onClick={getTotalPrice}>Calculate</Button>
       <h4>Total price:{total}€</h4>
       <h4>Distance: {distance* 0.001} km</h4>
-
+      <Map />
     </Form>
+   
+    </>
   );
 }
 

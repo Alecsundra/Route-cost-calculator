@@ -1,7 +1,8 @@
 .App {
   text-align: center;
-  padding: 4rem;
+  padding: 2rem;
   background-color: rgb(39, 38, 51);
+
 }
 .first-location{
   display: flex;
@@ -32,6 +33,8 @@
   border-radius: 8px;
 
 }
-h4 {
-  margin-top: 2rem;
+
+.mapWrapper {
+  /* width: 100vw; */
+  height: 100vh;
 }
