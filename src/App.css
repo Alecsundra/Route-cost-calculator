@@ -6,12 +6,10 @@
 }
 .first-location{
   display: flex;
-  margin-top:2rem;
   justify-content: space-around;
 }
 .second-location{
   display: flex;
-  margin-top:2rem;
   justify-content: space-around;
 
 }
@@ -37,4 +35,10 @@
 .mapWrapper {
   /* width: 100vw; */
   height: 100vh;
+}
+
+.text {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-top: 4px solid rgba(15, 10, 44, 0.534);
 }

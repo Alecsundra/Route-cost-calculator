@@ -50,11 +50,13 @@ console.log(price)
               long1={long1}
               lat2={lat2}
               long2={long2}
+              distance={distance}
             />
   }
   return (
     <>
       <Form>
+      {show === false &&
         <div className='distance-form'>
           <FormGroup>
             <Label for="exampleNumber">Distance(km)</Label>
@@ -68,6 +70,7 @@ console.log(price)
             />
           </FormGroup>
           </div>
+      }
           <h4>Coordinates</h4>
           <div className='first-location'>
           <FormGroup>
@@ -81,6 +84,7 @@ console.log(price)
               placeholder="Latitude first location"
             />
           </FormGroup>
+          <h5>Origin</h5>
           <FormGroup>
             <Label for="exampleNumber">Longitude</Label>
             <Input
@@ -93,6 +97,7 @@ console.log(price)
             />
           </FormGroup>
           </div>
+          <h5>Destination</h5>
           {/* point B */}
           <div className='second-location'>
           <FormGroup>
@@ -119,11 +124,11 @@ console.log(price)
           </FormGroup>
         </div>
         <Button  color="info" onClick={postFormValue}>Get distance</Button>
-        <h4>Distance: {distance* 0.001} km</h4>
+        {/* <h4>Distance: {distance* 0.001} km</h4> */}
 
         <div className='prices'>
         <FormGroup>
-          <Label for="exampleNumber">Price($/km)</Label>
+          <Label for="exampleNumber">Price(€/km)</Label>
           <Input
             value={price}
             onChange={e =>setPrice(e.target.value)}
@@ -142,17 +147,10 @@ console.log(price)
           </Input>
         </FormGroup>
         </div>
-        <Button  color="info" onClick={getTotalPrice}>Calculate</Button>
-        <h4>Total price:{total}€</h4>
-      {/* <div className={show}> */}
-     {show && showMap()} 
-        {/* <Map 
-          lat1={lat1}
-          long1={long1}
-          lat2={lat2}
-          long2={long2}
-        /> */}
-        {/* </div> */}
+        <Button  color="info" onClick={getTotalPrice}>Calculate total price</Button>
+        <h4 className='text'>Total price:{total}€</h4>
+        {show && showMap()} 
+
     </Form>
    
     </>
